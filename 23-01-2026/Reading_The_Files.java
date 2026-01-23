@@ -17,11 +17,11 @@ import java.nio.file.Paths;
 public class Reading_The_Files{
     public static void main(String[] args) throws IOException{
         //Method 1
-        // BufferedReader br = new BufferedReader(new FileReader("input.txt"));
-        // String line = br.readLine();
-        // if(line!=null){
-        //      System.out.println(line);
-        // }
+        BufferedReader br = new BufferedReader(new FileReader("input.txt"));
+        String line = br.readLine();
+        if(line!=null){
+             System.out.println(line);
+        }
 
 
 
