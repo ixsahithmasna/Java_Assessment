@@ -33,7 +33,7 @@ class Pair {
     }
 }
 
-public class Reading_File {
+public class problem1 {
     public static void main(String[] args) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader("input.txt"))) {
             StringBuilder sb = new StringBuilder();
@@ -48,6 +48,10 @@ public class Reading_File {
             int total_sentences = Sentences(s);
             int total_Characters = T_Characters(s);
 
+            for(int i=0;i<arr.length;i++){
+                System.out.println(arr[i]);
+            }
+            
             ArrayList<String> top_5 = Top_5(arr);
             for (int i = 0; i < top_5.size(); i++) {
                 System.out.println(top_5.get(i));
@@ -60,21 +64,22 @@ public class Reading_File {
             System.out.println(total_sentences);
             System.out.println(total_Characters);
 
-            String a ="Sahith";
-            String b ="Sahith";
-            boolean flag = a==b;
-            if(flag){
-                System.out.println("Both String pointing to same reference beacause as first store in the string pool and after while creation of string2 it checks first in the string pool if it is there it will directly refer to that if not it will take new string with different reference");
-            }
-            if(a.equals(b)) {
-                System.out.println("Both String are equals");
-            }
-            String aa = new String("Sahith");
-            String bb = new String("Sahith");
-            boolean flagg = aa==bb;
-            if(!flag){
-                System.out.println("Both String refer to different "+flag)
-            }
+            // String a ="Sahith";
+            // String b ="Sahith";
+            // boolean flag = a==b;
+            // if(flag){
+            //     System.out.println("Both String pointing to same reference beacause as first store in the string pool and after while creation of string2 it checks first in the string pool if it is there it will directly refer to that if not it will take new string with different reference");
+            // }
+            // if(a.equals(b)) {
+            //     System.out.println("Both String are equals");
+            // }
+            // String aa = new String("Sahith");
+            // String bb = new String("Sahith");
+            // boolean flagg = aa==bb;
+            // if(!flag){
+            //     System.out.println("Both String refer to different "+flag)
+            // }
+            CompareString(arr);
 
         } 
         catch(FileNotFoundException e){
@@ -95,6 +100,31 @@ public class Reading_File {
         }
 
         return ans;
+    }
+    public static void CompareString(String[] arr){
+        ArrayList<String> list = new ArrayList<>();
+        for(String s : arr){
+            s = s.toLowerCase().replaceAll("[^a-z]","");
+            list.add(s);
+        }
+        for(int i=0;i<list.size()-1;i++){
+            for(int j=i+1;j<list.size();j++){
+                String a = list.get(i);
+                String b = list.get(j);
+                if(a==b){
+                    System.out.println("Already the string is there in the string pool and so they are referring to the same "+a);
+                }
+                else{
+                    System.out.println("String are not refering to same address "+a+"!="+b);
+                }
+                if(a.equals(b)){
+                    System.out.println("Both String are equals " +a);
+                }
+                else{
+                    System.out.println("String are not equal "+a+" "+b);
+                }
+            }
+        }
     }
     public static ArrayList<String> Top_5(String[] arr) {
         HashMap<String, Integer> map = new HashMap<>();

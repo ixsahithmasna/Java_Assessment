@@ -18,7 +18,7 @@ import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Map;
 
-public class Removing_duplicates {
+public class problem2 {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         String line = sc.nextLine();
