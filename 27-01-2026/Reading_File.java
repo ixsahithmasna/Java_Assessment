@@ -60,6 +60,21 @@ public class Reading_File {
             System.out.println(total_sentences);
             System.out.println(total_Characters);
 
+            String a ="Sahith";
+            String b ="Sahith";
+            boolean flag = a==b;
+            if(flag){
+                System.out.println("Both String pointing to same reference beacause as first store in the string pool and after while creation of string2 it checks first in the string pool if it is there it will directly refer to that if not it will take new string with different reference");
+            }
+            if(a.equals(b)) {
+                System.out.println("Both String are equals");
+            }
+            String aa = new String("Sahith");
+            String bb = new String("Sahith");
+            boolean flagg = aa==bb;
+            if(!flag){
+                System.out.println("Both String refer to different "+flag)
+            }
 
         } 
         catch(FileNotFoundException e){
